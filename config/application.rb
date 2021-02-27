@@ -21,5 +21,13 @@ module TestGuru
     config.time_zone = 'Kyiv'
     config.i18n.available_locales = %i[en ua]
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.template_engine nil
+      g.test_framework nil
+      g.assets false
+      g.helper false
+      g.stylesheets false
+    end
   end
 end
