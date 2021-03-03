@@ -6,6 +6,4 @@ class User < ApplicationRecord
   has_many :authored_tests, inverse_of: :author, dependent: :destroy
 
   validates :email, :password, :name, presence: true
-
-  scope :tests_by_level, ->(level) { tests.where(level: level) }
 end

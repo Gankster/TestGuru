@@ -18,6 +18,10 @@ class Test < ApplicationRecord
   scope :by_category, lambda { |title|
     Test.joins('LEFT JOIN categories ON tests.category_id = categories.id')
         .where(categories: { title: title })
-        .order(id: :desc)
+        .order(title: :DESC)
   }
+
+  def self.category_by_title(title)
+    Test.by_category(title).pluck(:title)
+  end
 end
