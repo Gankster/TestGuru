@@ -17,8 +17,12 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    question = @test.questions.create(question_params)
-    render plain: question.body
+    question = @test.questions.new(questions_params)
+    if question.save
+      render plain: question.body
+    else
+      render plain: 'Could not save question'
+    end
   end
 
   def destroy
