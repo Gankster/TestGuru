@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :authored_tests, inverse_of: :author, dependent: :destroy
 
   validates :email, :password, :name, presence: true
+  validates :email, format: URI::MailTo::EMAIL_REGEXP, uniqueness: true
+
+  has_secure_password
 
   def passing_test(test)
     passing_tests.order(created_at: :desc).find_by(test_id: test.id)

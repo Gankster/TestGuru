@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PassingTest < ApplicationRecord
+  VALUE_FOR_PASSAGE = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -8,7 +10,7 @@ class PassingTest < ApplicationRecord
   before_save :before_save_set_question
 
   def test_passed?
-    result_percent >= 85
+    result_percent >= VALUE_FOR_PASSAGE
   end
 
   def result_percent

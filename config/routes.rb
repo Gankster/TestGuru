@@ -19,5 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: :create
+  resources :sessions, only: :create
+
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  delete :logout, to: 'sessions#destroy'
+
   root 'tests#index'
 end
