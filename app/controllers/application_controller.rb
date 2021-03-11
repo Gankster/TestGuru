@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     return if current_user
 
-    cookies[:path] = request.fullpath
+    cookies[:return_to_path] = request.fullpath
     redirect_to login_path, alert: 'You must be authorized!'
   end
 
