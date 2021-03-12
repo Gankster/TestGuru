@@ -1,31 +1,26 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  helper_method :current_user, :logged_in?
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
 
   protected
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
+  end
+
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_root_path : super
+  end
+
+  def admin?
+    current_user.is_a?(Admin)
+  end
+
   def rescue_with_record_not_found
     render plain: "Record not found."
-  end
-
-  private
-
-  def authenticate_user!
-    return if current_user
-
-    cookies[:return_to_path] = request.fullpath
-    redirect_to login_path, alert: 'You must be authorized!'
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
   end
 end
