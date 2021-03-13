@@ -1,6 +1,6 @@
-<h1>Passing test: <%= @passing_test.test.title %></h1>
+<h1><%= t('.header', title: @passing_test.test.title) %></h1>
 <h2><%= @passing_test.current_question.body %></h2>
-<h3>answer <%= @passing_test.current_question_number %>/<%= @passing_test.test.questions.count %></h3>
+<h3><%= t('.question_number', q_number: @passing_test.current_question_number, q_count: @passing_test.test.questions.count) %></h3>
 <%= form_with url: passing_test_path(@passing_test), local: true, method: :put do |form| %>
 
   <%= form.collection_check_boxes :answer_ids, @passing_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -10,5 +10,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t('.next') %></p>
 <% end %>

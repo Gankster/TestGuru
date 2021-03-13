@@ -9,7 +9,7 @@ class Admin
     private
 
     def admin_required!
-      redirect_to root_path, alert: 'Access Denied!' unless current_user.admin?
+      redirect_to root_path, alert: t('errors.access_denied') unless current_user.admin?
     end
   end
 end

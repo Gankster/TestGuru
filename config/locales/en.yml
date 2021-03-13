@@ -30,4 +30,103 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  sure?: "Are you sure?"
+  back: "Back"
+  logout: "Logout"
+  sign_up: "Sign up"
+  login: "Sign in"
+  navbar:
+    all_tests: "All tests"
+    welcome: "Welcome"
+  layouts:
+    footer:
+      info: "Project where you can pass the tests"
+      school_info: "Educational project in online-school Thinknetica"
+    admin:
+      html_title: "Admin Panel"
+  activerecord:
+    models:
+      answer: "Answer"
+      question: "Question"
+      test: "Test"
+    attributes:
+      answer:
+        body: "Answer"
+        correct: "Correct"
+      question:
+        body: "Question"
+      test:
+        title: "Name"
+        category_id: "Category"
+      user:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+  admin:
+    answers:
+      show:
+        correct: "Correct"
+        answer: "Answer"
+        header: "Answer for the question: %{body}"
+      new:
+        header: "New answer"
+      edit:
+        header: "Edit answer"
+    questions:
+      form:
+        header_new: "Creating a new question for the %{title} test"
+        header_edit: "Edit question for the %{title} test"
+      show:
+        header: "Questions for the %{title} test"
+        answers: "Answers"
+        new_answer: "New answer"
+      destroy:
+        deleted: "Question was deleted"
+    tests:
+      form:
+        create_test: "Create new test"
+        edit_test: "Edit test"
+      test:
+        test_title: "Test %{title}"
+      index:
+        all_tests: "All tests"
+        new_test: "New test"
+        test: "Test"
+        questions: "Questions"
+        author: "Author"
+        actions: "Actions"
+      show:
+        new_question: "New question"
+        question: "Question"
+        actions: "Actions"
+        header: "Test %{title} (questions %{count_q})"
+  shared:
+    errors:
+      header:
+        one: "Error %{count} detected"
+        other: "Errors %{count} detected"
+  passing_tests:
+    result:
+      completed_test: "Test %{title} completed"
+      correct_percent: "You gave the correct answer to %{percent} questions"
+      test_passed: "Test passed"
+      test_failed: "Test failed"
+    show:
+      header: "Passing the test %{title}"
+      question_number: "question %{q_number}/%{q_count}"
+      next: "Next"
+  tests:
+    index:
+      all_tests: "All tests"
+      test: "Test"
+      actions: "Actions"
+      questions: "Questions"
+    test:
+      test_title: "Test %{title}"
+      start: "Start"
+  errors:
+    access_denied: "Access Denied!"
+    record_not_found: "Record not found."

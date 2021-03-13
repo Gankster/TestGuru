@@ -33,7 +33,7 @@ class Admin
 
     def destroy
       @question.destroy
-      redirect_to [:admin, @question.test], notice: 'Question was deleted'
+      redirect_to [:admin, @question.test], notice: t('.deleted')
     end
 
     private

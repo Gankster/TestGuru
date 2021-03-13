@@ -1,11 +1,11 @@
-<h1>Test <%= @passing_test.test.title %> finished</h1>
+<h1><%= t('.completed_test', title: @passing_test.test.title) %></h1>
 
-<h2>You gave the correct answer to <%= result_percent_color(@passing_test) %> questions</h2>
+<h2><%= raw t('.correct_percent', percent: result_percent_color(@passing_test)) %></h2>
 
 <% if @passing_test.test_passed?  %>
-  <h2 style='color: green'>Test passed</h2>
+  <h2 style='color: green'><%= t('.test_passed') %></h2>
 <% else %>
-  <h2 style='color: red'>Test failed</h2>
+  <h2 style='color: red'><%= t('.test_failed') %></h2>
 <% end %>
 
 <span color='red'></span>
