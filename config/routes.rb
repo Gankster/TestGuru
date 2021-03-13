@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, path_names: { sign_in: :login, sign_out: :logout }, controllers: {
+    sessions: 'users/sessions'
+  }
 
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
-    end
-
+  resources :tests, only: :index do
     member do
       post :start
     end
@@ -19,12 +17,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: :create
-  resources :sessions, only: :create
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
+    end
 
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  delete :logout, to: 'sessions#destroy'
+    root 'tests#index'
+  end
 
   root 'tests#index'
 end
