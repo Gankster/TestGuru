@@ -16,10 +16,6 @@ class ApplicationController < ActionController::Base
     resource.is_a?(Admin) ? admin_root_path : super
   end
 
-  def admin?
-    current_user.is_a?(Admin)
-  end
-
   def rescue_with_record_not_found
     render plain: "Record not found."
   end
