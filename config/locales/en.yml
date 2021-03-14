@@ -41,6 +41,7 @@ en:
   navbar:
     all_tests: "All tests"
     welcome: "Welcome"
+    admin_panel: "Admin-Panel"
   layouts:
     footer:
       info: "Project where you can pass the tests"

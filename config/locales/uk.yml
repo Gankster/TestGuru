@@ -10,6 +10,7 @@ uk:
   navbar:
     all_tests: "Всі тести"
     welcome: "Ласкаво просимо"
+    admin_panel: "Адмін-Панель"
   layouts:
     footer:
       info: "Проект проходження тестів"
