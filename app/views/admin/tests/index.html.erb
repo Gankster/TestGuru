@@ -1,12 +1,12 @@
   
-<h2>All Tests</h2>
-<%= link_to 'New Test', new_admin_test_path %>
+<h2><%= t('.all_tests') %></h2>
+<%= link_to t('.new_test'), new_admin_test_path %>
 <br>
 <table>
   <tr>
-    <th>Test</th>
-    <th>Author</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('.test') %></th>
+    <th><%= t('.author') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
   <%= render @tests %>
 </table>

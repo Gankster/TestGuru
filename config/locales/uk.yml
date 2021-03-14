@@ -1,0 +1,103 @@
+uk:
+  show: "Переглянути"
+  edit: "Редагувати"
+  delete: "Видалити"
+  sure?: "Ви впевнені?"
+  back: "Назад"
+  logout: "Вихід"
+  sign_up: "Регістрація"
+  login: "Вхід"
+  navbar:
+    all_tests: "Всі тести"
+    welcome: "Ласкаво просимо"
+  layouts:
+    footer:
+      info: "Проект проходження тестів"
+      school_info: "Навчальний проект в онлайн-школі Thinknetica"
+    admin:
+      html_title: "Адмін Панель"
+  activerecord:
+    models:
+      answer: "Відповідь"
+      question: "Питання"
+      test: "Тест"
+    attributes:
+      answer:
+        body: "Відповідь"
+        correct: "Правильна"
+      question:
+        body: "Питання"
+      test:
+        title: "Назва"
+        category_id: "Категоорія"
+      user:
+        email: "Пошта"
+        password: "Пароль"
+        remember_me: "Запам'ятати меня"
+  admin:
+    answers:
+      show:
+        correct: "Правильна"
+        answer: "Відповідь"
+        header: "Відповідь для питання: %{body}"
+      new:
+        header: "Нова відповідь"
+      edit:
+        header: "Редагування відповіді"
+    questions:
+      form:
+        header_new: "Створення нового питання для теста %{title}"
+        header_edit: "Редагування питання для теста %{title}"
+      show:
+        header: "Відповіді для теста %{title}"
+        answers: "Відповіді"
+        new_answer: "Нова відповідь"
+      destroy:
+        deleted: "Питання було видалено"
+    tests:
+      form:
+        create_test: "Створення нового теста"
+        edit_test: "Редагування теста"
+      test:
+        test_title: "Тест %{title}"
+      index:
+        all_tests: "Всі тести"
+        new_test: "Новий тест"
+        test: "Тест"
+        questions: "Питання"
+        author: "Автор"
+        actions: "Дії"
+      show:
+        new_question: "Нове питання"
+        question: "Питання"
+        actions: "Дії"
+        header: "Тест %{title} (питань %{count_q})"
+  shared:
+    errors:
+      header:
+        few: "Виявлено %{count} помилки"
+        many: "Виявлено %{count} помилок"
+        one: "Виявлена %{count} помилка"
+        other: "Виявлено %{count} помилки"
+  passing_tests:
+    result:
+      completed_test: "Тест %{title} завершений"
+      correct_percent: "Ви відповіли правильно на %{percent} питань"
+      test_passed: "Тест пройдено"
+      test_failed: "Тест провалено"
+    show:
+      header: "Проходження теста %{title}"
+      question_number: "питання %{q_number}/%{q_count}"
+      next: "Дальше"
+  tests:
+    index:
+      all_tests: "Всі тести"
+      test: "Тест"
+      actions: "Дії"
+      questions: "Питання"
+    test:
+      test_title: "Тест %{title}"
+      start: "Старт"
+  errors:
+    access_denied: "В доступі відмовлено!"
+    record_not_found: "Запис не знайдено."
