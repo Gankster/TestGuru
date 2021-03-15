@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  ALERTS = { alert: 'danger', notice: 'primary' }.freeze
+
   def current_year
     Time.current.year
   end
@@ -9,7 +11,7 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message(message)
-    tag.p(flash[:alert], class: 'flash alert') if flash[message]
+  def alert_manager(key)
+    ALERTS[key.to_sym] || key
   end
 end
