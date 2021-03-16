@@ -42,3 +42,4 @@ yarn-debug.log*
 .vscode
 .rubocop.yml
 .solargraph.yml
+.env

@@ -7,6 +7,7 @@ uk:
   logout: "Вихід"
   sign_up: "Регістрація"
   login: "Вхід"
+  gist_description: 'Питання про %{title}, з TestGuru'
   navbar:
     all_tests: "Всі тести"
     welcome: "Ласкаво просимо"
@@ -90,6 +91,9 @@ uk:
       header: "Проходження теста %{title}"
       question_number: "питання %{q_number}/%{q_count}"
       next: "Дальше"
+      gist_question: 'Відправити на gist'
+    gist:
+      failure: 'Щось пішло не так, попробуйте пізніше'
   tests:
     index:
       all_tests: "Всі тести"
@@ -102,3 +106,4 @@ uk:
   errors:
     access_denied: "В доступі відмовлено!"
     record_not_found: "Запис не знайдено."
+    limit_max_answers: "Перевищено ліміт відповідей"

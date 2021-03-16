@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PassingTestsController < ApplicationController
-  before_action :find_passing_test, only: %i[show result update]
+  before_action :find_passing_test, only: %i[show result update gist]
 
   def show; end
 
@@ -17,9 +17,28 @@ class PassingTestsController < ApplicationController
     end
   end
 
+  def gist
+    result = GistQuestionService.new(@passing_test.current_question).call
+
+    flash_options = if result
+                      create_gist!(result.html_url)
+                      { notice: result.html_url }
+                    else
+                      { alert: t('.failure') }
+                    end
+    redirect_to @passing_test, flash_options
+  end
+
   private
 
   def find_passing_test
     @passing_test = PassingTest.find(params[:id])
+  end
+
+  def create_gist!(url)
+    current_user.gists.create!(
+      question: @passing_test.current_question,
+      url: url
+    )
   end
 end
