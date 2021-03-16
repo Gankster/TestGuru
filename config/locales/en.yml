@@ -38,6 +38,7 @@ en:
   logout: "Logout"
   sign_up: "Sign up"
   login: "Sign in"
+  gist_description: "A question about %{title} from TestGuru"
   navbar:
     all_tests: "All tests"
     welcome: "Welcome"
@@ -119,6 +120,9 @@ en:
       header: "Passing the test %{title}"
       question_number: "question %{q_number}/%{q_count}"
       next: "Next"
+      gist_question: 'Send to the Gist'
+    gist:
+      failure: 'Error!, try again later'
   tests:
     index:
       all_tests: "All tests"
@@ -131,3 +135,4 @@ en:
   errors:
     access_denied: "Access Denied!"
     record_not_found: "Record not found."
+    limit_max_answers: "Answer limit reached"
