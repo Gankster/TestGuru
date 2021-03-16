@@ -37,11 +37,9 @@ class PassingTestsController < ApplicationController
   end
 
   def create_gist(url)
-    current_user.gists.create!(
+    current_user.gists.create(
       question: @passing_test.current_question,
       url: url
     )
-  rescue StandardError => e
-    Rails.logger.error e.message
   end
 end
