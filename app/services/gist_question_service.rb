@@ -11,6 +11,10 @@ class GistQuestionService
     @client.create_gist(gist_params.to_json)
   end
 
+  def success?
+    @client.last_response.status.between?(200, 299)
+  end
+
   private
 
   def gist_params

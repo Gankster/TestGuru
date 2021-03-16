@@ -18,10 +18,11 @@ class PassingTestsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@passing_test.current_question).call
+    service = GistQuestionService.new(@passing_test.current_question)
+    result = service.call
 
-    flash_options = if result
-                      create_gist!(result.html_url)
+    flash_options = if service.success?
+                      create_gist(result.html_url)
                       { notice: result.html_url }
                     else
                       { alert: t('.failure') }
@@ -35,10 +36,12 @@ class PassingTestsController < ApplicationController
     @passing_test = PassingTest.find(params[:id])
   end
 
-  def create_gist!(url)
+  def create_gist(url)
     current_user.gists.create!(
       question: @passing_test.current_question,
       url: url
     )
+  rescue StandardError => e
+    Rails.logger.error e.message
   end
 end
