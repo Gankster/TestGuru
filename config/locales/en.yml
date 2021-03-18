@@ -120,9 +120,9 @@ en:
       header: "Passing the test %{title}"
       question_number: "question %{q_number}/%{q_count}"
       next: "Next"
-      gist_question: 'Send to the Gist'
+      gist_question: "Send to the Gist"
     gist:
-      failure: 'Error!, try again later'
+      failure: "Error!, try again later"
   tests:
     index:
       all_tests: "All tests"

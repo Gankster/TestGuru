@@ -1,0 +1,22 @@
+.pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.testsTable {
+  width: 100%;
+  margin: 8px;
+  margin-top: 20px;
+}
+
+.testsTable th {
+  border-bottom: 1px solid black;
+}
+
+.testsTable tr {
+  border-bottom: 1px solid #e6e7e8;
+  height: 40px;
+}

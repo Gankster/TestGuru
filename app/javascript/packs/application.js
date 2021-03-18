@@ -8,6 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require("../utilities/sorting")
+require("../utilities/password_identification")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
