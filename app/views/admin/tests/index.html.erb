@@ -1,9 +1,13 @@
 <h2><%= t('.all_tests') %></h2>
 <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary' %>
-<table class="table table-bordered mt-2">
+<table class="table mt-2">
   <thead>
     <tr>
-      <th><%= t('.test') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('.test') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th><%= t('.questions') %></th>
       <th><%= t('.author') %></th>
       <th colspan="3"><%= t('.actions') %></th>
