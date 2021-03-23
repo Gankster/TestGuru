@@ -7,7 +7,7 @@ uk:
   logout: "Вихід"
   sign_up: "Регістрація"
   login: "Вхід"
-  gist_description: 'Питання про %{title}, з TestGuru'
+  gist_description: "Питання про %{title}, з TestGuru"
   navbar:
     all_tests: "Всі тести"
     welcome: "Ласкаво просимо"
@@ -74,6 +74,8 @@ uk:
         question: "Питання"
         actions: "Дії"
         header: "Тест %{title} (питань %{count_q})"
+      form_inline:
+        submit: "OK"
   shared:
     errors:
       header:
@@ -91,9 +93,9 @@ uk:
       header: "Проходження теста %{title}"
       question_number: "питання %{q_number}/%{q_count}"
       next: "Дальше"
-      gist_question: 'Відправити на gist'
+      gist_question: "Відправити на gist"
     gist:
-      failure: 'Щось пішло не так, попробуйте пізніше'
+      failure: "Щось пішло не так, попробуйте пізніше"
   tests:
     index:
       all_tests: "Всі тести"

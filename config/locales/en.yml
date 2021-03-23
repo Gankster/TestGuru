@@ -105,6 +105,8 @@ en:
         question: "Question"
         actions: "Actions"
         header: "Test %{title} (questions %{count_q})"
+      form_inline:
+        submit: "OK"
   shared:
     errors:
       header:
