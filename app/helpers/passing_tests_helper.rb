@@ -9,4 +9,8 @@ module PassingTestsHelper
       "<span style='color: red'>#{percent}%</span>".html_safe
     end
   end
+
+  def progress(passing_test)
+    (passing_test.current_question_number - 1) * 100 / passing_test.test.questions.count
+  end
 end

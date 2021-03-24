@@ -10,6 +10,8 @@ import "channels"
 
 require("../utilities/sorting")
 require("../utilities/password_identification")
+require("../utilities/progress")
+require("../utilities/form_inline")
 
 Rails.start()
 Turbolinks.start()

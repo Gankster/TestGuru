@@ -10,6 +10,10 @@
     </p>
   <% end %>
 
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
   <p><%= link_to t('.gist_question'), gist_passing_test_path(@passing_test), method: :post %></p>
-  <p><%= form.submit t('.next') %></p>
+  <p><%= form.submit t('.next'), class: "btn btn-primary next", data: { progress: progress(@passing_test) } %></p>
 <% end %>
