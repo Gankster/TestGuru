@@ -12,6 +12,7 @@ uk:
     all_tests: "Всі тести"
     welcome: "Ласкаво просимо"
     admin_panel: "Адмін-Панель"
+    feedback: "Відгук"
   layouts:
     footer:
       info: "Проект проходження тестів"
@@ -105,6 +106,15 @@ uk:
     test:
       test_title: "Тест %{title}"
       start: "Старт"
+  feedbacks:
+    new:
+      header: "Напишіть ваш відгук!"
+      send: "Відправити"
+    create:
+      success: "Відгук було успішно відправлено!"
+  feedback_mailer:
+    send_feedback:
+      subject: "Відгук TestGuru!"
   errors:
     access_denied: "В доступі відмовлено!"
     record_not_found: "Запис не знайдено."

@@ -43,6 +43,7 @@ en:
     all_tests: "All tests"
     welcome: "Welcome"
     admin_panel: "Admin-Panel"
+    feedback: "Feedback"
   layouts:
     footer:
       info: "Project where you can pass the tests"
@@ -134,6 +135,15 @@ en:
     test:
       test_title: "Test %{title}"
       start: "Start"
+  feedbacks:
+    new:
+      header: "Write your feedback!"
+      send: "Send"
+    create:
+      success: "Feedback was successfully sent!"
+  feedback_mailer:
+    send_feedback:
+      subject: "TestGuru Feedback!"
   errors:
     access_denied: "Access Denied!"
     record_not_found: "Record not found."
