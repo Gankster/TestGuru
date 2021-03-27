@@ -49,7 +49,7 @@ class Admin
     private
 
     def find_tests
-      @tests = Test.all
+      @tests = Test.all.order(title: :asc)
     end
 
     def find_test
@@ -57,7 +57,7 @@ class Admin
     end
 
     def test_params
-      params.require(:test).permit(:category_id, :title)
+      params.require(:test).permit(:category_id, :title, :ready)
     end
   end
 end

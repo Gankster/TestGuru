@@ -101,6 +101,7 @@ en:
         questions: "Questions"
         author: "Author"
         actions: "Actions"
+        ready: "Ready"
       show:
         new_question: "New question"
         question: "Question"
@@ -126,6 +127,8 @@ en:
       gist_question: "Send to the Gist"
     gist:
       failure: "Error!, try again later"
+    update:
+      empty_answer: "You did't select any answers"
   tests:
     index:
       all_tests: "All tests"
@@ -135,6 +138,8 @@ en:
     test:
       test_title: "Test %{title}"
       start: "Start"
+    start:
+      questions_not_found: "Can't start test without questions"
   feedbacks:
     new:
       header: "Write your feedback!"

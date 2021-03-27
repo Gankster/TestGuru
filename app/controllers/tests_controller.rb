@@ -4,12 +4,16 @@ class TestsController < ApplicationController
   before_action :find_test, only: :start
 
   def index
-    @tests = Test.all
+    @tests = Test.ready
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.passing_test(@test)
+    if @test.questions.count.positive?
+      current_user.tests.push(@test)
+      redirect_to current_user.passing_test(@test)
+    else
+      redirect_to root_path, alert: t('.questions_not_found')
+    end
   end
 
   private

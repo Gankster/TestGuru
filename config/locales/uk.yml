@@ -70,6 +70,7 @@ uk:
         questions: "Питання"
         author: "Автор"
         actions: "Дії"
+        ready: "Готовий"
       show:
         new_question: "Нове питання"
         question: "Питання"
@@ -97,6 +98,8 @@ uk:
       gist_question: "Відправити на gist"
     gist:
       failure: "Щось пішло не так, попробуйте пізніше"
+    update:
+      empty_answer: "Ви не вибрали жодної відповіді"
   tests:
     index:
       all_tests: "Всі тести"
@@ -106,6 +109,8 @@ uk:
     test:
       test_title: "Тест %{title}"
       start: "Старт"
+    start:
+      questions_not_found: "Не можна почати тест без питань"
   feedbacks:
     new:
       header: "Напишіть ваш відгук!"
