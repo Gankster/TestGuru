@@ -5,8 +5,8 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -32,8 +32,8 @@ gem 'devise'
 # Localisation
 gem 'rails-i18n', '~> 6.0'
 
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'jquery-rails'
 gem "octicons_helper"
 
 gem 'octokit', '~> 4.20'

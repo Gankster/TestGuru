@@ -2,12 +2,19 @@
 
 class PassingTestsController < ApplicationController
   before_action :find_passing_test, only: %i[show result update gist]
+  before_action :refresh_flash_message, only: %i[update]
 
   def show; end
 
   def result; end
 
   def update
+    if params[:answer_ids].blank?
+      flash[:alert] = t(".empty_answer")
+      render :show
+      return
+    end
+
     @passing_test.accept!(params[:answer_ids])
     if @passing_test.completed?
       TestsMailer.completed_test(@passing_test).deliver_now
@@ -41,5 +48,9 @@ class PassingTestsController < ApplicationController
       question: @passing_test.current_question,
       url: url
     )
+  end
+
+  def refresh_flash_message
+    flash.delete(:alert)
   end
 end
