@@ -5,6 +5,7 @@
   </td>
   <td><%= test.questions.count %></td>
   <td><%= test.author.full_name %></td>
+  <td><%= check_box_tag 'ready', test.id, test.ready, class: 'ready_checkbox', id: "ready_#{test.id}"%></td>
   <td><%= link_to t('show'), admin_test_path(test) %></td>
   <td><%= link_to t('edit'), 
                   edit_admin_test_path(test),

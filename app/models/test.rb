@@ -20,6 +20,7 @@ class Test < ApplicationRecord
         .where(categories: { title: title })
         .order(title: :DESC)
   }
+  scope :ready, -> { where(ready: true) }
 
   def self.category_by_title(title)
     Test.by_category(title).pluck(:title)

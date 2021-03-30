@@ -6,70 +6,68 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+admin = Admin.find_by(email: 'admin@testguru.com') || Admin.create(
+  email: 'admin@testguru.com',
+  password: '123456',
+  first_name: 'Admin',
+  last_name: 'Super'
+)
+
 categories = Category.create([
-  { title: 'Frontend' },
-  { title: 'Backend' },
-  { title: 'Mobile' }
-])
+                               { title: 'Frontend' },
+                               { title: 'Backend' },
+                               { title: 'Mobile' }
+                             ])
 
 tests = Test.create([
-  { title: 'HTML', category_id: categories[0].id },
-  { title: 'JavaScript', level: 1, category_id: categories[0].id },
-  { title: 'Ruby', level: 2, category_id: categories[1].id },
-  { title: 'Java', level: 3, category_id: categories[1].id },
-  { title: 'Android', level: 2, category_id: categories[2].id }
-])
+                      { title: 'HTML', category: categories[0], author: admin },
+                      { title: 'JavaScript', level: 1, category: categories[0], author: admin },
+                      { title: 'Ruby', level: 2, category: categories[1], author: admin },
+                      { title: 'Java', level: 3, category: categories[1], author: admin },
+                      { title: 'Android', level: 2, category: categories[2], author: admin }
+                    ])
 
 questions = Question.create([
-  { body: 'What html tag creates the input field?', test_id: tests[0].id },
-  { body: 'What will return the parseInt("08") function call?', test_id: tests[1].id },
-  { body: 'Which company developed JavaScript?', test_id: tests[1].id },
-  { body: 'What does this return? "hello".upcase()', test_id: tests[2].id },
-  { body: 'What does the following code return? [:a, :b, :c].include?(:a)', test_id: tests[2].id },
-  { body: 'Is it possible to dynamically change an array size?', test_id: tests[3].id },
-  { body: 'Which company developed android?', test_id: tests[4].id }
-])
+                              { body: 'What html tag creates the input field?', test: tests[0] },
+                              { body: 'What will return the parseInt("08") function call?', test: tests[1] },
+                              { body: 'Which company developed JavaScript?', test: tests[1] },
+                              { body: 'What does this return? "hello".upcase()', test: tests[2] },
+                              { body: 'What does the following code return? [:a, :b, :c].include?(:a)',
+                                test: tests[2] },
+                              { body: 'Is it possible to dynamically change an array size?', test: tests[3] },
+                              { body: 'Which company developed android?', test: tests[4] }
+                            ])
 
 Answer.create([
-  { body: '<text>', question_id: questions[0].id },
-  { body: '<select>', question_id: questions[0].id },
-  { body: '<input>', correct: true, question_id: questions[0].id },
+                { body: '<text>', question: questions[0] },
+                { body: '<select>', question: questions[0] },
+                { body: '<input>', correct: true, question: questions[0] },
 
-  { body: 'Depends on the browser engine', correct: true, question_id: questions[1].id },
-  { body: '08', question_id: questions[1].id },
-  { body: '8', question_id: questions[1].id },
+                { body: 'Depends on the browser engine', correct: true, question: questions[1] },
+                { body: '08', question: questions[1] },
+                { body: '8', question: questions[1] },
 
-  { body: 'Apple', question_id: questions[2].id },
-  { body: 'Netscape', correct: true, question_id: questions[2].id },
-  { body: 'Sun Microsystems', question_id: questions[2].id },
+                { body: 'Apple', question: questions[2] },
+                { body: 'Netscape', correct: true, question: questions[2] },
+                { body: 'Sun Microsystems', question: questions[2] },
 
-  { body: 'Hello', question_id: questions[3].id },
-  { body: 'HeLlo', question_id: questions[3].id },
-  { body: 'HELLO', correct: true, question_id: questions[3].id },
+                { body: 'Hello', question: questions[3] },
+                { body: 'HeLlo', question: questions[3] },
+                { body: 'HELLO', correct: true, question: questions[3] },
 
-  { body: 'false', question_id: questions[4].id },
-  { body: 'true', correct: true, question_id: questions[4].id },
-  { body: 'nil', question_id: questions[4].id },
+                { body: 'false', question: questions[4] },
+                { body: 'true', correct: true, question: questions[4] },
+                { body: 'nil', question: questions[4] },
 
-  { body: 'No', correct: true, question_id: questions[5].id },
-  { body: 'Yes', question_id: questions[5].id },
+                { body: 'No', correct: true, question: questions[5] },
+                { body: 'Yes', question: questions[5] },
 
-  { body: 'Android Inc.', question_id: questions[6].id },
-  { body: 'Google', correct: true, question_id: questions[6].id },
-  { body: 'Apple', question_id: questions[6].id },
-])
+                { body: 'Android Inc.', question: questions[6] },
+                { body: 'Google', correct: true, question: questions[6] },
+                { body: 'Apple', question: questions[6] }
+              ])
 
-users = User.create([
-  { email: 'user1@gmail.com', password: 'password1', name: 'User1' },
-  { email: 'user2@gmail.com', password: 'password2', name: 'User2' }
-])
-
-PassingTest.create([
-  { user_id: users[0].id, test_id: tests[0].id },
-  { user_id: users[0].id, test_id: tests[2].id },
-  { user_id: users[0].id, test_id: tests[4].id, passed: true },
-  { user_id: users[1].id, test_id: tests[0].id },
-  { user_id: users[1].id, test_id: tests[1].id },
-  { user_id: users[1].id, test_id: tests[3].id, passed: true },
-])
-
+User.create([
+              { email: 'user1@gmail.com', password: 'password1', first_name: 'Bob', last_name: 'Smit' },
+              { email: 'user2@gmail.com', password: 'password2', first_name: 'Jack', last_name: 'Roof' }
+            ])
