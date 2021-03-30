@@ -1,0 +1,6 @@
+<tr>
+  <td><%= image_tag badge.image, class: "badge-image" %></td>
+  <td><%= badge.name %></td>
+  <td><%= badge.rule.name %></td>
+  <td><%= @user_badges.where(badge: badge).count %></td>
+</tr>

@@ -3,9 +3,7 @@
 <h2><%= raw t('.correct_percent', percent: result_percent_color(@passing_test)) %></h2>
 
 <% if @passing_test.test_passed?  %>
-  <h2 style='color: green'><%= t('.test_passed') %></h2>
+  <h2 class="passed"><%= t('.test_passed') %></h2>
 <% else %>
-  <h2 style='color: red'><%= t('.test_failed') %></h2>
+  <h2 class="failed"><%= t('.test_failed') %></h2>
 <% end %>
-
-<span color='red'></span>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_073846) do
+ActiveRecord::Schema.define(version: 2021_04_08_061146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2021_03_28_073846) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_rules", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "kind", null: false
+    t.integer "value", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image", null: false
+    t.bigint "rule_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rule_id"], name: "index_badges_on_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -43,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_073846) do
   create_table "passing_tests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "test_id"
-    t.boolean "passed", default: false
+    t.boolean "succeeded", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "current_question_id"
@@ -74,6 +91,15 @@ ActiveRecord::Schema.define(version: 2021_03_28_073846) do
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
   end
 
+  create_table "user_badges", force: :cascade do |t|
+    t.bigint "badge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "first_name", default: "", null: false
@@ -101,6 +127,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_073846) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "badge_rules", column: "rule_id"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "passing_tests", "questions", column: "current_question_id"
@@ -109,4 +136,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_073846) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

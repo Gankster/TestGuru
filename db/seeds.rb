@@ -71,3 +71,15 @@ User.create([
               { email: 'user1@gmail.com', password: 'password1', first_name: 'Bob', last_name: 'Smit' },
               { email: 'user2@gmail.com', password: 'password2', first_name: 'Jack', last_name: 'Roof' }
             ])
+
+BadgeRule.create(
+  [
+    { name: 'Successful passing of all frontend tests', kind: 1, value: categories[0].id },
+    { name: 'Successful passing of all backend tests', kind: 1, value: categories[1].id },
+    { name: 'Successful passing of all mobile tests', kind: 1, value: categories[2].id },
+    { name: 'Successful passing of all level 1 tests', kind: 2, value: 1 },
+    { name: 'Successful passing of all level 2 tests', kind: 2, value: 2 },
+    { name: 'Successful passing of all level 3 tests', kind: 2, value: 3 },
+    { name: 'Successfully passing the test on the first try', kind: 0, value: 0 }
+  ]
+)

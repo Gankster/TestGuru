@@ -44,6 +44,7 @@ en:
     welcome: "Welcome"
     admin_panel: "Admin-Panel"
     feedback: "Feedback"
+    badges: "Badges"
   layouts:
     footer:
       info: "Project where you can pass the tests"
@@ -109,6 +110,25 @@ en:
         header: "Test %{title} (questions %{count_q})"
       form_inline:
         submit: "OK"
+    badges:
+      form:
+        create_badge: "Create new badge"
+        edit_badge: "Edit badge"
+      create:
+        success: "Badge %{title} was created!"
+      update:
+        success: "Badge was updated!"
+      destroy:
+        success: "Badge %{title} was destroyed"
+      index:
+        title: "Badges list"
+        name: "Name"
+        image: "Image"
+        rule: "Rule"
+        actions: "Actions"
+        new_badge: "New badge"
+      show:
+        title: "Badge %{badge_name}"
   shared:
     errors:
       header:
@@ -129,6 +149,7 @@ en:
       failure: "Error!, try again later"
     update:
       empty_answer: "You did't select any answers"
+      you_received_badges: "You have received badges: %{names}!"
   tests:
     index:
       all_tests: "All tests"
@@ -146,6 +167,10 @@ en:
       send: "Send"
     create:
       success: "Feedback was successfully sent!"
+  badges:
+    index:
+      title: "Available badges"
+      count: "My badges"
   feedback_mailer:
     send_feedback:
       subject: "TestGuru Feedback!"

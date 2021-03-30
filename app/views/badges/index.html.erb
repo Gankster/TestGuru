@@ -1,0 +1,19 @@
+<div class="row text-center">
+  <div class="col">
+    <h1><%= t(".title") %></h1>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('.image') %></th>
+      <th><%= t('.name') %></th>
+      <th><%= t('.rule') %></th>
+      <th><%= t('.count') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>

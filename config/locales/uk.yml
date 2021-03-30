@@ -13,6 +13,7 @@ uk:
     welcome: "Ласкаво просимо"
     admin_panel: "Адмін-Панель"
     feedback: "Відгук"
+    badges: "Значки"
   layouts:
     footer:
       info: "Проект проходження тестів"
@@ -78,6 +79,25 @@ uk:
         header: "Тест %{title} (питань %{count_q})"
       form_inline:
         submit: "OK"
+    badges:
+      form:
+        create_badge: "Новий значок"
+        edit_badge: "Редагувати значок"
+      create:
+        success: "Значок %{title} створено!"
+      update:
+        success: "Значок відредаговано!"
+      destroy:
+        success: "Значок %{title} видалено"
+      index:
+        title: "Список значків"
+        name: "Назва"
+        image: "Зображення"
+        rule: "Правило"
+        actions: "Дії"
+        new_badge: "Новий значок"
+      show:
+        title: "Значок %{badge_name}"
   shared:
     errors:
       header:
@@ -100,6 +120,7 @@ uk:
       failure: "Щось пішло не так, попробуйте пізніше"
     update:
       empty_answer: "Ви не вибрали жодної відповіді"
+      you_received_badges: "Ви отримали значки: %{names}!"
   tests:
     index:
       all_tests: "Всі тести"
@@ -117,6 +138,10 @@ uk:
       send: "Відправити"
     create:
       success: "Відгук було успішно відправлено!"
+  badges:
+    index:
+      title: "Доступні значки"
+      count: "Мої значки"
   feedback_mailer:
     send_feedback:
       subject: "Відгук TestGuru!"

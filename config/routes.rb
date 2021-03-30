@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resource :feedback, only: %i[new create]
+  resources :badges, only: :index
 
   namespace :admin do
     resources :tests do
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges
 
     root 'tests#index'
   end

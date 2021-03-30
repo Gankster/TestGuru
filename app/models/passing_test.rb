@@ -9,12 +9,18 @@ class PassingTest < ApplicationRecord
 
   before_save :before_save_set_question
 
+  scope :succeeded, -> { where(succeeded: true) }
+  scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
+  scope :in_category, ->(category) { joins(:test).where(tests: { category_id: category.id }) }
+
   def test_passed?
     result_percent >= VALUE_FOR_PASSAGE
   end
 
   def result_percent
     (100 * correct_questions) / test.questions.count
+  rescue StandardError
+    0
   end
 
   def completed?
@@ -36,8 +42,13 @@ class PassingTest < ApplicationRecord
     self.current_question = if current_question.nil?
                               test.questions.first
                             else
+                              after_complete(next_question)
                               next_question
                             end
+  end
+
+  def after_complete(question)
+    self.succeeded = test_passed? if question.nil?
   end
 
   def correct_answer?(answer_ids)

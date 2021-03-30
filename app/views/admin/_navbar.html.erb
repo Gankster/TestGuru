@@ -11,6 +11,9 @@
       <li class="nav-item">
         <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
       </li>
+      <li class="nav-item">
+        <%= link_to t('.badges'), admin_badges_path, class: 'nav-link' %>
+      </li>
     </ul>
     <span>
       <% if signed_in? %>
