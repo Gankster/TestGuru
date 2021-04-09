@@ -17,8 +17,14 @@ class PassingTestsController < ApplicationController
 
     @passing_test.accept!(params[:answer_ids])
     if @passing_test.completed?
+      flash_message = {}
+      if @passing_test.test_passed?
+        result = BadgeCheckService.new(current_user, @passing_test).call
+        flash_message = { notice: t(".you_received_badges", names: result.join(', ')) } if result.present?
+      end
+
       TestsMailer.completed_test(@passing_test).deliver_now
-      redirect_to result_passing_test_path(@passing_test)
+      redirect_to result_passing_test_path(@passing_test), flash_message
     else
       render :show
     end
