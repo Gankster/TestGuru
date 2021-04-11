@@ -22,7 +22,7 @@ class PassingTest < ApplicationRecord
   end
 
   def time_ended?
-    timer_end_time ? Time.current > timer_end_time : false
+    test.timer? && Time.current > timer_end_time
   end
 
   def test_passed?
