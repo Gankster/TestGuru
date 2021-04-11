@@ -57,7 +57,7 @@ class Admin
     end
 
     def test_params
-      params.require(:test).permit(:category_id, :title, :ready)
+      params.require(:test).permit(:category_id, :title, :level, :ready, :duration)
     end
   end
 end

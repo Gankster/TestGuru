@@ -12,4 +12,5 @@
     <%= render @test.questions %>
   </tbody>
 </table>
+<%= link_to t('edit'), edit_admin_test_path(@test) %> |
 <%= link_to t('back'), admin_tests_path %>

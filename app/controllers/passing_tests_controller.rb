@@ -3,6 +3,7 @@
 class PassingTestsController < ApplicationController
   before_action :find_passing_test, only: %i[show result update gist]
   before_action :refresh_flash_message, only: %i[update]
+  before_action :check_timer, only: %i[show update]
 
   def show; end
 
@@ -58,5 +59,9 @@ class PassingTestsController < ApplicationController
 
   def refresh_flash_message
     flash.delete(:alert)
+  end
+
+  def check_timer
+    redirect_to result_passing_test_path(@passing_test) if @passing_test.time_ended?
   end
 end
