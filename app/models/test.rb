@@ -25,4 +25,8 @@ class Test < ApplicationRecord
   def self.category_by_title(title)
     Test.by_category(title).pluck(:title)
   end
+
+  def timer?
+    duration.present?
+  end
 end

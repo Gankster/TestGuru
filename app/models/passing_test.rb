@@ -13,6 +13,18 @@ class PassingTest < ApplicationRecord
   scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
   scope :in_category, ->(category) { joins(:test).where(tests: { category_id: category.id }) }
 
+  def duration
+    @duration ||= test.duration
+  end
+
+  def timer_end_time
+    created_at + duration.minutes if duration
+  end
+
+  def time_ended?
+    test.timer? && Time.current > timer_end_time
+  end
+
   def test_passed?
     result_percent >= VALUE_FOR_PASSAGE
   end

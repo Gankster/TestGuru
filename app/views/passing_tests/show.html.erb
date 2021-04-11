@@ -1,4 +1,11 @@
 <h1><%= t('.header', title: @passing_test.test.title) %></h1>
+<% if @passing_test.duration %>
+  <div class="alert alert-info d-flex align-items-center flex-column">
+    <%= t(".time_remaining") %>
+    <div class="clock" data-end-time="<%= @passing_test.timer_end_time %>" data-passing-test-id="<%= @passing_test.id %>">
+    </div>
+  </div>
+<% end %>
 <h2><%= @passing_test.current_question.body %></h2>
 <h3><%= t('.question_number', q_number: @passing_test.current_question_number, q_count: @passing_test.test.questions.count) %></h3>
 <%= form_with url: passing_test_path(@passing_test), local: true, method: :put do |form| %>

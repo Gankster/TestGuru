@@ -8,12 +8,14 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
+import "jquery-countdown/dist/jquery.countdown"
 
 require("../utilities/sorting")
 require("../utilities/password_identification")
 require("../utilities/progress")
 require("../utilities/form_inline")
 require("../utilities/test_ready")
+require("../utilities/timer")
 
 Rails.start()
 Turbolinks.start()

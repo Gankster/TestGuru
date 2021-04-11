@@ -65,6 +65,8 @@ en:
       test:
         title: "Name"
         category_id: "Category"
+        level: "Level"
+        duration: "Duration"
       user:
         email: "Email"
         password: "Password"
@@ -145,6 +147,7 @@ en:
       question_number: "question %{q_number}/%{q_count}"
       next: "Next"
       gist_question: "Send to the Gist"
+      time_remaining: "Time Remaining"
     gist:
       failure: "Error!, try again later"
     update:
